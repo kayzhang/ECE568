@@ -32,6 +32,7 @@ int main(int argc, char * argv[]) {
 
   if (remove(SV_SOCK_PATH) == -1 && errno != ENOENT) {
     fprintf(stderr, "remove-%s\n", SV_SOCK_PATH);
+    exit(EXIT_FAILURE);
   }
 
   memset(&addr, 0, sizeof(addr));
